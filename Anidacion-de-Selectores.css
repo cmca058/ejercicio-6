@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #333;
+}
+
+.change {
+    padding: 5rem 10rem;
+    background: white ;
+    border: 0.1rem solid white;
+    position: relative;
+    border-radius: .3rem;
+    overflow: hidden;
+}
+
+.change::before {
+    content: 'Pasa por encima';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #c20000;
+    text-transform:uppercase;
+    letter-spacing: .3rem;
+    font-weight: 700;
+    text-shadow: .1rem .1rem .1rem #333;
+    transition: .2s ease;
+}
+
+.change::after {
+    content: 'Hecho';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 3rem;
+    color: #333;
+    text-transform:uppercase;
+    letter-spacing: .3rem;
+    font-weight: 700;
+    text-shadow: .1rem .1rem .1rem #333;
+    transition: .2s ease;
+    opacity: 0;
+}
+
+.change:hover::before{
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+}
+.change:hover::after {
+    padding: 5rem 10rem;
+    background: green;
+    background-color: green;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    color: white;
+    border: 0.1rem solid green
+}
